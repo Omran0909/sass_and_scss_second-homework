@@ -1,0 +1,46 @@
+@mixin card($bg, $color, $amount: 10%) {
+    background-color: $bg;
+    color: $color;
+    border-color: darken($color: $bg, $amount: $amount);
+}
+
+.card {
+    width: 100%;
+    border: 1px solid darken($color: $white, $amount: 10%);
+    border-radius: 5px;
+    font-family: $primary-font;
+    background-color: $white;
+
+    // .image {
+    //     width: calc(100% - 20px);
+    //     height: inherit;
+    //     // padding: 5px;
+    // }
+
+    .card-header {
+        border-bottom: 1px solid black;
+        padding: $space;
+        border-color: inherit;
+        // background-color: grey;
+    }
+
+    .card-body {
+        padding: $space;
+    }
+}
+
+.card-info {
+    @include card($info, $white);
+}
+
+.card-success {
+    @include card($success, $white);
+}
+
+.card-warning {
+    @include card($warning, $white, 5%);
+}
+
+.card-dark {
+    @include card($dark, $white);
+}
